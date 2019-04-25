@@ -1,0 +1,149 @@
+* 
+  box-sizing: border-box
+
+ul
+  margin: 0
+  padding: 0
+li
+  cursor: pointer
+  position: relative
+  padding: 12px 8px 12px 40px
+  background: #eee
+  font-size: 18px
+  transition: 0.2s
+    
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  &:nth-child(odd)
+    background: #f9f9f9
+  &:hover
+    background: #ddd
+
+input
+  margin: 0
+  border: none
+  border-radius: 0.2em 0 0 0
+  width: 85%
+  padding: 11px
+  float: left
+  font-size: 16px
+  color: black
+
+
+.addBtn
+  position: relative
+  padding: 12px
+  border: none
+  width: 15%
+  background: #dfe3ee
+  color: #555
+  cursor: pointer
+  border-radius: 0 0.4em 0em 0em
+  transition: 0.4s
+  &:hover
+    background-color: #8b9dc3
+
+
+.header 
+  background-color: #3b5998
+  padding: 30px 40px
+  color: white
+  text-align: center
+  border-radius: 1.2em 1.2em 0 0
+  &:after 
+    content: ""
+    display: table
+    clear: both
+
+.close
+  position: relative
+  padding: 10px 10px
+  font-size: 0.7em
+  font-weight: bolder
+  background-color: transparent
+  transition: 0.5s
+  &:hover
+    padding: 10px 10px
+    font-size: 0.7em
+    border-radius: 50%
+    background-color: red
+
+.fancy-checkbox
+  width: 28px
+  height: 28px
+  position: relative
+  background: white
+  transition: 0.5s
+  label
+    width: 22px
+    height: 22px
+    cursor: pointer
+    position: absolute
+    left: 3px
+    top: 3px
+    background: white
+    &:after
+      content: ''
+      width: 9px
+      height: 5px
+      position: absolute
+      top: 5px
+      left: 5px
+      border: 3px solid black
+      border-top: none
+      border-right: none
+      background: transparent
+      opacity: 0
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+    &:hover::after
+      opacity: 0.3
+  input[type=checkbox]
+    visibility: hidden
+    &:checked + label:after
+      opacity: 1
+
+.completed
+  text-decoration: line-through
+  text-decoration-color: red
+
+.App
+  margin-top: 20px
+
+.container
+  box-shadow: 0em 0em 0em 0em
+
+.TodoList 
+  display: flex
+  flex-direction: column
+  justify-content: center
+  flex-wrap: wrap
+  align-items: center
+.TodoItem 
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  padding: 10px 20px
+  width: 100%
+  border-bottom: 1px solid #3b5998
+
+.TodoItem .fancy-checkbox 
+  min-width: 28px
+  margin-right: 20px
+
+.TodoItem .close
+  margin-left: 20px
+
+.TodoItem .todo-text 
+  text-align: center
+
+@media all and (max-width: 700px)
+  body
+    font-size: 1.0em
+  .TodoItem
+    width: 250px
+  .TodoAdd input
+    width: 170px
